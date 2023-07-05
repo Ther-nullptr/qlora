@@ -12,4 +12,4 @@ python qlora.py \
     --max_new_tokens 64 \
     --do_sample \
     --top_p 0.9 \
-    --num_beams 1 \
+    --num_beams 1

@@ -26,7 +26,6 @@ from transformers import (
     Seq2SeqTrainer,
     BitsAndBytesConfig,
     LlamaTokenizer
-
 )
 from datasets import load_dataset, Dataset
 import evaluate
@@ -297,6 +296,7 @@ def get_accelerate_model(args, checkpoint_dir):
         trust_remote_code=args.trust_remote_code,
         use_auth_token=args.use_auth_token
     )
+    print(model)
     if compute_dtype == torch.float16 and args.bits == 4:
         major, minor = torch.cuda.get_device_capability()
         if major >= 8:
